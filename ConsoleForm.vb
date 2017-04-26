@@ -1,18 +1,23 @@
-﻿Imports System.IO
-
+﻿Imports System.IO.Ports
+Imports System.Windows.Forms
+Imports PlcInterface
+Imports PlcInterface.Gui.Utility
 
 
 Public Class ConsoleForm
 
     Private _IniFileAccess As IniFileGateway
 
+    Private _plc As IPlc
+    Private _plcGenerator As PlcTypeGenerator
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles loadSET_Button.Click
         Dim FileName As String
-        Dim filestream1 As System.IO.FileStream
-        Dim chrstream1 As System.IO.StreamReader
+        'Dim filestream1 As System.IO.FileStream
+        'Dim chrstream1 As System.IO.StreamReader
 
         OpenFileDialog1.InitialDirectory = System.Environment.CurrentDirectory
-        OpenFileDialog1.Filter = "文本文件(*.txt)|*.txt|配置文件(*.pl)|*.pl|所有文件|*.*"
+        OpenFileDialog1.Filter = "配置文件(*.pl)|*.pl|所有文件|*.*"
         OpenFileDialog1.RestoreDirectory = True
         OpenFileDialog1.FilterIndex = 1
         OpenFileDialog1.Title = "打开文件窗口"
@@ -24,8 +29,8 @@ Public Class ConsoleForm
         If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             FileName = OpenFileDialog1.FileName
             If FileName <> "" Then
-                filestream1 = File.Open(FileName, IO.FileMode.Open, FileAccess.Read)
-                chrstream1 = New System.IO.StreamReader(filestream1)
+                'filestream1 = File.Open(FileName, IO.FileMode.Open, FileAccess.Read)
+                'chrstream1 = New System.IO.StreamReader(filestream1)
                 openSetting(FileName)
                 'TextBox1.AppendText(chrstream1.ReadToEnd)
             End If
@@ -39,8 +44,11 @@ Public Class ConsoleForm
 
         Dim IniFilePath As String = FileName
 
+        'MsgBox(IniFilePath)
+
         _IniFileAccess = New IniFileGateway(IniFilePath)
 
+        Me.Label12.Text = _IniFileAccess.GetIniString("SETTINGS", "Name", "名称未知")
         Me.ipAddressTextBox.Text = _IniFileAccess.GetIniString("SETTINGS", "IPADDRESS", "192.168.0.10")
         Me.PortNo1TextBox.Text = _IniFileAccess.GetIniInteger("SETTINGS", "PORTNO1", 1280)
         Me.PortNo2TextBox.Text = _IniFileAccess.GetIniInteger("SETTINGS", "PORTNO2", 1281)

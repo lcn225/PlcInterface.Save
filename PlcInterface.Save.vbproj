@@ -6,8 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{886C089A-5873-4068-82BB-BA6A42653CEF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>PlcInterface.Save.My.MyApplication</StartupObject>
-    <RootNamespace>PlcInterface.Save</RootNamespace>
+    <StartupObject>My.MyApplication</StartupObject>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>PlcInterface.Save</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
@@ -118,6 +119,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlcInterface.Gui\PlcInterface.Gui.vbproj">
+      <Project>{E61B7E56-EC27-440E-93FC-480FF3DFCB50}</Project>
+      <Name>PlcInterface.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlcInterface\PlcInterface.vbproj">
+      <Project>{BAF9B092-10BA-4D09-BF2B-656C222711B9}</Project>
+      <Name>PlcInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

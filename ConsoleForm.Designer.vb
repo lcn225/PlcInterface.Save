@@ -50,15 +50,16 @@ Partial Class ConsoleForm
         Me.ipAddressLabel = New System.Windows.Forms.Label()
         Me.dataGroupBox = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Add_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Value = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.connectGroupBox = New System.Windows.Forms.GroupBox()
         Me.closeButton = New System.Windows.Forms.Button()
         Me.openButton = New System.Windows.Forms.Button()
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Add_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Value = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.ethernetSettingGroupBox.SuspendLayout()
         Me.dataGroupBox.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -324,6 +325,24 @@ Partial Class ConsoleForm
         Me.DataGridView1.Size = New System.Drawing.Size(391, 468)
         Me.DataGridView1.TabIndex = 14
         '
+        'Address
+        '
+        Me.Address.HeaderText = "地址"
+        Me.Address.Name = "Address"
+        Me.Address.ReadOnly = True
+        '
+        'Add_Name
+        '
+        Me.Add_Name.HeaderText = "名称"
+        Me.Add_Name.Name = "Add_Name"
+        Me.Add_Name.ReadOnly = True
+        '
+        'Value
+        '
+        Me.Value.HeaderText = "值"
+        Me.Value.Name = "Value"
+        Me.Value.ReadOnly = True
+        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(105, 69)
@@ -374,33 +393,26 @@ Partial Class ConsoleForm
         Me.openButton.Text = "Open"
         Me.openButton.UseVisualStyleBackColor = True
         '
-        'Address
-        '
-        Me.Address.HeaderText = "地址"
-        Me.Address.Name = "Address"
-        Me.Address.ReadOnly = True
-        '
-        'Add_Name
-        '
-        Me.Add_Name.HeaderText = "名称"
-        Me.Add_Name.Name = "Add_Name"
-        Me.Add_Name.ReadOnly = True
-        '
-        'Value
-        '
-        Me.Value.HeaderText = "值"
-        Me.Value.Name = "Value"
-        Me.Value.ReadOnly = True
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label12.Location = New System.Drawing.Point(13, 13)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(35, 16)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "   "
         '
         'ConsoleForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(728, 573)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.connectGroupBox)
         Me.Controls.Add(Me.dataGroupBox)
         Me.Controls.Add(Me.ethernetSettingGroupBox)
@@ -412,6 +424,7 @@ Partial Class ConsoleForm
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.connectGroupBox.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -452,4 +465,5 @@ Partial Class ConsoleForm
     Friend WithEvents Add_Name As DataGridViewTextBoxColumn
     Friend WithEvents Value As DataGridViewTextBoxColumn
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Label12 As Label
 End Class
