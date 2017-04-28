@@ -22,6 +22,7 @@ Partial Class ConsoleForm
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ethernetSettingGroupBox = New System.Windows.Forms.GroupBox()
         Me.loadSET_Button = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -48,20 +49,19 @@ Partial Class ConsoleForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ipAddressTextBox = New System.Windows.Forms.TextBox()
         Me.ipAddressLabel = New System.Windows.Forms.Label()
-        Me.dataGroupBox = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Add_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Value = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.stopButton = New System.Windows.Forms.Button()
+        Me.saveButton = New System.Windows.Forms.Button()
         Me.connectGroupBox = New System.Windows.Forms.GroupBox()
         Me.closeButton = New System.Windows.Forms.Button()
         Me.openButton = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ethernetSettingGroupBox.SuspendLayout()
-        Me.dataGroupBox.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.connectGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -301,24 +301,13 @@ Partial Class ConsoleForm
         Me.ipAddressLabel.TabIndex = 0
         Me.ipAddressLabel.Text = "IP Address"
         '
-        'dataGroupBox
-        '
-        Me.dataGroupBox.Controls.Add(Me.DataGridView1)
-        Me.dataGroupBox.Enabled = False
-        Me.dataGroupBox.Location = New System.Drawing.Point(265, 43)
-        Me.dataGroupBox.Name = "dataGroupBox"
-        Me.dataGroupBox.Size = New System.Drawing.Size(435, 518)
-        Me.dataGroupBox.TabIndex = 4
-        Me.dataGroupBox.TabStop = False
-        Me.dataGroupBox.Text = "Data"
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Address, Me.Add_Name, Me.Value})
-        Me.DataGridView1.Location = New System.Drawing.Point(18, 31)
+        Me.DataGridView1.Location = New System.Drawing.Point(274, 43)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 23
@@ -343,31 +332,31 @@ Partial Class ConsoleForm
         Me.Value.Name = "Value"
         Me.Value.ReadOnly = True
         '
-        'Button2
+        'stopButton
         '
-        Me.Button2.Location = New System.Drawing.Point(105, 69)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "停止"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.stopButton.Location = New System.Drawing.Point(105, 69)
+        Me.stopButton.Name = "stopButton"
+        Me.stopButton.Size = New System.Drawing.Size(75, 23)
+        Me.stopButton.TabIndex = 13
+        Me.stopButton.Text = "停止"
+        Me.stopButton.UseVisualStyleBackColor = True
         '
-        'Button1
+        'saveButton
         '
-        Me.Button1.Enabled = False
-        Me.Button1.Location = New System.Drawing.Point(105, 20)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "保存"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.saveButton.Enabled = False
+        Me.saveButton.Location = New System.Drawing.Point(105, 20)
+        Me.saveButton.Name = "saveButton"
+        Me.saveButton.Size = New System.Drawing.Size(75, 23)
+        Me.saveButton.TabIndex = 12
+        Me.saveButton.Text = "保存"
+        Me.saveButton.UseVisualStyleBackColor = True
         '
         'connectGroupBox
         '
         Me.connectGroupBox.Controls.Add(Me.closeButton)
-        Me.connectGroupBox.Controls.Add(Me.Button2)
+        Me.connectGroupBox.Controls.Add(Me.stopButton)
         Me.connectGroupBox.Controls.Add(Me.openButton)
-        Me.connectGroupBox.Controls.Add(Me.Button1)
+        Me.connectGroupBox.Controls.Add(Me.saveButton)
         Me.connectGroupBox.Location = New System.Drawing.Point(12, 444)
         Me.connectGroupBox.Name = "connectGroupBox"
         Me.connectGroupBox.Size = New System.Drawing.Size(218, 117)
@@ -407,20 +396,22 @@ Partial Class ConsoleForm
         Me.Label12.TabIndex = 6
         Me.Label12.Text = "   "
         '
+        'Timer1
+        '
+        '
         'ConsoleForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(728, 573)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.connectGroupBox)
-        Me.Controls.Add(Me.dataGroupBox)
         Me.Controls.Add(Me.ethernetSettingGroupBox)
         Me.Name = "ConsoleForm"
         Me.Text = "ConsoleForm"
         Me.ethernetSettingGroupBox.ResumeLayout(False)
         Me.ethernetSettingGroupBox.PerformLayout()
-        Me.dataGroupBox.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.connectGroupBox.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -453,9 +444,8 @@ Partial Class ConsoleForm
     Friend WithEvents Label1 As Label
     Friend WithEvents ipAddressTextBox As TextBox
     Friend WithEvents ipAddressLabel As Label
-    Friend WithEvents dataGroupBox As GroupBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents stopButton As Button
+    Friend WithEvents saveButton As Button
     Friend WithEvents connectGroupBox As GroupBox
     Friend WithEvents closeButton As Button
     Friend WithEvents openButton As Button
@@ -466,4 +456,5 @@ Partial Class ConsoleForm
     Friend WithEvents Value As DataGridViewTextBoxColumn
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Label12 As Label
+    Friend WithEvents Timer1 As Timer
 End Class
