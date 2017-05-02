@@ -61,6 +61,7 @@ Partial Class ConsoleForm
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.mitsubishiEthernetQnARadioButton = New System.Windows.Forms.RadioButton()
         Me.ethernetSettingGroupBox.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.connectGroupBox.SuspendLayout()
@@ -68,6 +69,7 @@ Partial Class ConsoleForm
         '
         'ethernetSettingGroupBox
         '
+        Me.ethernetSettingGroupBox.Controls.Add(Me.mitsubishiEthernetQnARadioButton)
         Me.ethernetSettingGroupBox.Controls.Add(Me.loadSET_Button)
         Me.ethernetSettingGroupBox.Controls.Add(Me.Label11)
         Me.ethernetSettingGroupBox.Controls.Add(Me.PortNo8TextBox)
@@ -399,6 +401,16 @@ Partial Class ConsoleForm
         'Timer1
         '
         '
+        'mitsubishiEthernetQnARadioButton
+        '
+        Me.mitsubishiEthernetQnARadioButton.AutoSize = True
+        Me.mitsubishiEthernetQnARadioButton.Location = New System.Drawing.Point(16, 125)
+        Me.mitsubishiEthernetQnARadioButton.Name = "mitsubishiEthernetQnARadioButton"
+        Me.mitsubishiEthernetQnARadioButton.Size = New System.Drawing.Size(161, 16)
+        Me.mitsubishiEthernetQnARadioButton.TabIndex = 26
+        Me.mitsubishiEthernetQnARadioButton.Text = "Mitsubishi Ethernet QnA" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.mitsubishiEthernetQnARadioButton.UseVisualStyleBackColor = True
+        '
         'ConsoleForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -457,4 +469,5 @@ Partial Class ConsoleForm
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Label12 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents mitsubishiEthernetQnARadioButton As RadioButton
 End Class

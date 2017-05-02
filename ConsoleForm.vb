@@ -41,8 +41,6 @@ Public Class ConsoleForm
         End If
 
 
-
-
     End Sub
 
     Private Sub openSetting(ByVal FileName As String)
@@ -83,9 +81,9 @@ Public Class ConsoleForm
     End Sub
 
     Private Sub openButton_Click(sender As Object, e As EventArgs) Handles openButton.Click
-        'Me._plc = Me._plcGenerator.Generate()
+        Me._plc = Me._plcGenerator.Generate()
 
-        'Me._plc.Open()
+        Me._plc.Open()
 
         Me.openButton.Enabled = False
         Me.closeButton.Enabled = True
@@ -167,5 +165,9 @@ Public Class ConsoleForm
 
         saveButton.Text = "保存"
         saveButton.Enabled = True
+    End Sub
+
+    Private Sub closeButton_Click(sender As Object, e As EventArgs) Handles closeButton.Click
+        openButton.Enabled = True
     End Sub
 End Class
