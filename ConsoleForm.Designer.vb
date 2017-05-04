@@ -50,18 +50,29 @@ Partial Class ConsoleForm
         Me.ipAddressTextBox = New System.Windows.Forms.TextBox()
         Me.ipAddressLabel = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+<<<<<<< HEAD
         Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Add_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Value = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stopButton = New System.Windows.Forms.Button()
         Me.saveButton = New System.Windows.Forms.Button()
+=======
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+>>>>>>> parent of aa9e4c4... 加入连接功能
         Me.connectGroupBox = New System.Windows.Forms.GroupBox()
         Me.closeButton = New System.Windows.Forms.Button()
         Me.openButton = New System.Windows.Forms.Button()
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Add_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Value = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+<<<<<<< HEAD
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.mitsubishiEthernetQnARadioButton = New System.Windows.Forms.RadioButton()
+=======
+>>>>>>> parent of aa9e4c4... 加入连接功能
         Me.ethernetSettingGroupBox.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.connectGroupBox.SuspendLayout()
@@ -316,6 +327,7 @@ Partial Class ConsoleForm
         Me.DataGridView1.Size = New System.Drawing.Size(391, 468)
         Me.DataGridView1.TabIndex = 14
         '
+<<<<<<< HEAD
         'Address
         '
         Me.Address.HeaderText = "地址"
@@ -335,6 +347,9 @@ Partial Class ConsoleForm
         Me.Value.ReadOnly = True
         '
         'stopButton
+=======
+        'Button2
+>>>>>>> parent of aa9e4c4... 加入连接功能
         '
         Me.stopButton.Location = New System.Drawing.Point(105, 69)
         Me.stopButton.Name = "stopButton"
@@ -384,19 +399,27 @@ Partial Class ConsoleForm
         Me.openButton.Text = "Open"
         Me.openButton.UseVisualStyleBackColor = True
         '
+        'Address
+        '
+        Me.Address.HeaderText = "地址"
+        Me.Address.Name = "Address"
+        Me.Address.ReadOnly = True
+        '
+        'Add_Name
+        '
+        Me.Add_Name.HeaderText = "名称"
+        Me.Add_Name.Name = "Add_Name"
+        Me.Add_Name.ReadOnly = True
+        '
+        'Value
+        '
+        Me.Value.HeaderText = "值"
+        Me.Value.Name = "Value"
+        Me.Value.ReadOnly = True
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label12.Location = New System.Drawing.Point(13, 13)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(35, 16)
-        Me.Label12.TabIndex = 6
-        Me.Label12.Text = "   "
         '
         'Timer1
         '
@@ -416,8 +439,11 @@ Partial Class ConsoleForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(728, 573)
+<<<<<<< HEAD
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label12)
+=======
+>>>>>>> parent of aa9e4c4... 加入连接功能
         Me.Controls.Add(Me.connectGroupBox)
         Me.Controls.Add(Me.ethernetSettingGroupBox)
         Me.Name = "ConsoleForm"
@@ -427,7 +453,6 @@ Partial Class ConsoleForm
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.connectGroupBox.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -467,7 +492,10 @@ Partial Class ConsoleForm
     Friend WithEvents Add_Name As DataGridViewTextBoxColumn
     Friend WithEvents Value As DataGridViewTextBoxColumn
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+<<<<<<< HEAD
     Friend WithEvents Label12 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents mitsubishiEthernetQnARadioButton As RadioButton
+=======
+>>>>>>> parent of aa9e4c4... 加入连接功能
 End Class
